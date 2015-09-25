@@ -1,0 +1,29 @@
+<!-- Plays a rosbag  and launches the point tracker and its visualization  -->
+
+<launch>
+
+     <group ns="$(env ROBOT)">      
+     
+            <!-- Rosbag play -->
+            <node       
+                  pkg="rosbag"
+                  type="play"
+                  name="rosbag"
+                  args="-l --clock /home/andreu/dataSets/inertial_eye/rosbags/20130225_gardenTour3.bag"/>    
+
+            <!-- point tracker  -->
+            <node pkg="btr_point_tracker"
+                  type="btr_point_tracker_node"
+                  name="btr_point_tracker_node"
+                  args=""
+                  output="screen">
+                  <rosparam command="load" file="$(find btr_point_tracker)/config/btr_point_tracker_params.yaml"/>  
+                  <remap from="/$(env ROBOT)/btr_point_tracker_node/image_in" to="/camera/image_raw"/>                  
+            </node>
+                        
+      </group>
+
+     <!--  Visualization -->
+     <include file="$(find btr_point_tracker)/launch/view.launch"> </include>      
+      
+</launch>
