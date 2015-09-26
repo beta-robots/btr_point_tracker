@@ -43,7 +43,7 @@ void PointTracker::setParameters(pointTrackerParams & prms)
 {
       //get params
       params.verbose = prms.verbose;
-      params.min_hessian = prms.min_hessian;
+//       params.min_hessian = prms.min_hessian;
       params.min_features = prms.min_features;
       params.max_correspondence_dist = prms.max_correspondence_dist;
       params.old_track_latency = prms.old_track_latency;
@@ -82,7 +82,7 @@ void PointTracker::setDefaultParameters()
       pointTrackerParams pms;
       
       pms.verbose = false;
-      pms.min_hessian = MIN_HESSIAN_DEFAULT;
+//       pms.min_hessian = MIN_HESSIAN_DEFAULT;
       pms.min_features = MIN_FEATURES_DEFAULT;
       pms.max_correspondence_dist = MAX_CORRESPONDENCE_DIST_DEFAULT;
       pms.old_track_latency = OLD_TRACK_LATENCY_DEFAULT;
@@ -369,7 +369,7 @@ void PointTracker::printConfig() const
 {
       std::cout << "Tracker Configuration:" << std::endl 
             << "    verbose: " << params.verbose << std::endl
-            << "    min_hessian: " << params.min_hessian << std::endl
+//             << "    min_hessian: " << params.min_hessian << std::endl
             << "    min_features: " << params.min_features << std::endl
             << "    max_correspondence_dist: " << params.max_correspondence_dist << std::endl
             << "    old_track_latency: " << params.old_track_latency << std::endl

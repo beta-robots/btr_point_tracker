@@ -18,7 +18,7 @@
 #include "track_stamped.h"
 
 //constants
-const int MIN_HESSIAN_DEFAULT = 250;//500 //SURF features 
+// const int MIN_HESSIAN_DEFAULT = 250;//500 //SURF features 
 const unsigned int MIN_FEATURES_DEFAULT = 30; //ORB features
 const double MAX_CORRESPONDENCE_DIST_DEFAULT = 10; //[pixels]
 const double OLD_TRACK_LATENCY_DEFAULT = 0.5; //keep old tracks during a short time period before remove them
@@ -34,7 +34,7 @@ enum viewModeEnum {VIEW_POINTS=1, VIEW_CORRESPONDENCES, VIEW_TRACKS, VIEW_TRACKS
 struct pointTrackerParams
 {
       bool verbose; //true-> executio in verbose mode
-      int min_hessian;//hessian lower threshold (SURF)
+//       int min_hessian;//hessian lower threshold (SURF)
       unsigned int min_features; //minimum number of features (ORB)
       double max_correspondence_dist; //maximum distance in pixels allowed for a correspondence pair [pixels]
       double old_track_latency; //indicates how many seconds track will remain on visualization image [s]

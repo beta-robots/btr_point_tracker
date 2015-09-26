@@ -8,7 +8,7 @@ BtrPointTrackerNode::BtrPointTrackerNode() : nh(ros::this_node::getName()) , it(
       //get user parameters from dynamic reconfigure (yaml entries)
       nh.getParam("verbose_mode", auxParam); 
       params.verbose = (bool)auxParam;
-      nh.getParam("min_hessian", params.min_hessian);
+//       nh.getParam("min_hessian", params.min_hessian);
       nh.getParam("min_features", auxParam);
       params.min_features = (unsigned int)auxParam;
       nh.getParam("max_correspondence_dist", params.max_correspondence_dist);
